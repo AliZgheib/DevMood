@@ -20,13 +20,13 @@ jobs:
         with:
           node-version: "18"
 
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install && cd frontend && npm install
-
-      # Build Next.js project
-      - name: Build Next.js project
-        run: npm run build
+      # Generate static website assets
+      - name: Generate static website assets
+        run: | 
+          cd frontend
+          npm install
+          npm run build
+          cp -r out ../out 
 
       # Configure AWS Credentials 
       - name: Configure AWS Credentials
@@ -36,6 +36,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      # Install dependencies
+      - name: Install Pulumi dependencies
+        run: npm install
+
+      # Deploy infra with Pulumi
       - name: Deploy infra with Pulumi
         uses: pulumi/actions@v6
         with:

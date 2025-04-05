@@ -8,13 +8,38 @@ const bucket = new aws.s3.Bucket("dev-mood-bucket", {
   },
 });
 
-new synced.S3BucketFolder("dev-mood-folder", {
-  path: "./frontend/out",
+new synced.S3BucketFolder("dev-mood-bucket-folder", {
+  path: "./out",
   bucketName: bucket.bucket,
   acl: aws.s3.PrivateAcl,
 });
 
-// Export the website URL for later use
+new aws.s3.BucketPublicAccessBlock("dev-mood-bucket-public-access-block", {
+  bucket: bucket.id,
+  blockPublicAcls: false,
+  blockPublicPolicy: false,
+  ignorePublicAcls: false,
+  restrictPublicBuckets: false,
+});
+
+new aws.s3.BucketPolicy("dev-mood-bucket-policy", {
+  bucket: bucket.id,
+  policy: bucket.bucket.apply((bucketName) =>
+    JSON.stringify({
+      Version: "2012-10-17",
+      Statement: [
+        {
+          Sid: "PublicReadGetObject",
+          Effect: "Allow",
+          Principal: "*",
+          Action: "s3:GetObject",
+          Resource: `arn:aws:s3:::${bucketName}/*`,
+        },
+      ],
+    })
+  ),
+});
+
 export const websiteUrl = bucket.websiteEndpoint.apply(
   (websiteEndpoint) => `http://${websiteEndpoint}`
 );
