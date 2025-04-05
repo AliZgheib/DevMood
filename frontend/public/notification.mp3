@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevMood</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>DevMood 🎧</h1>
+    <p class="subtitle">Fuel your coding mood</p>
+
+    <div class="card" id="quoteCard">
+      <!-- Quote goes here -->
+    </div>
+
+    <div class="card" id="musicCard">
+      <!-- Music player goes here -->
+    </div>
+
+    <div class="buttons">
+      <button onclick="shuffleQuote()">💬 New Quote</button>
+      <button onclick="shuffleMusic()">🎵 New Playlist</button>
+      <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
