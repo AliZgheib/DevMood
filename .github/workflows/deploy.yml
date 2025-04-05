@@ -37,7 +37,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       # Install dependencies
-      - name: Install Pulumi dependencies
+      - name: Install dependencies
         run: npm install
 
       # Deploy infra with Pulumi
