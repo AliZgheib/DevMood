@@ -1,4 +1,4 @@
-name: dev-mood
+name: dev-mood-stack
 description: A minimal AWS TypeScript Pulumi program
 runtime:
   name: nodejs
