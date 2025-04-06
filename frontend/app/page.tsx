@@ -25,7 +25,7 @@ const themeOptions = [
 
 export default function Home() {
   const { setTheme: setSystemTheme } = useTheme()
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("dark")
   const [colorTheme, setColorTheme] = useState("default")
   const [showSettings, setShowSettings] = useState(false)
   const [enableParticles, setEnableParticles] = useState(true)
