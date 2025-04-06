@@ -20,7 +20,7 @@ The frontend of the Dev Mood app is built using **Next.js** and **Tailwind CSS**
 ## Infrastructure - Static Website Hosting with S3 (Infrastructure-1) 🌐
 
 ### Overview:
-The app is hosted on **Amazon S3** using its static website hosting feature. This setup is simple, cost-effective, and scalable, making it ideal for hosting static assets like HTML, CSS, and JavaScript files.
+The app is hosted on **Amazon S3** using its static website hosting feature. This setup is simple, cost-effective, and scalable, making it ideal for hosting static assets like HTML, CSS, and JavaScript files. The infrastructure is managed and deployed using **Pulumi**, an Infrastructure as Code (IaC) tool.
 
 ### Key Components:
 - **S3 Bucket**: Used to store the static website files (HTML, CSS, JS).
@@ -40,7 +40,7 @@ The S3 bucket provides a simple, cost-effective solution for hosting the fronten
 ## Infrastructure - Static Website Hosting with S3, CloudFront, and OAC (Infrastructure-2) ⚡
 
 ### Overview:
-The app is also hosted using **Amazon S3**, but this time with an added **CloudFront CDN** and **Origin Access Control (OAC)** for enhanced performance and security. CloudFront caches content at edge locations to deliver the site faster to users across the globe.
+The app is also hosted using **Amazon S3**, but this time with an added **CloudFront CDN** and **Origin Access Control (OAC)** for enhanced performance and security. CloudFront caches content at edge locations to deliver the site faster to users across the globe. This infrastructure is also managed and deployed using **Pulumi**.
 
 ### Key Components:
 - **S3 Bucket**: Stores static files, but with public access restricted to CloudFront only.
