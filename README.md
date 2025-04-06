@@ -110,22 +110,4 @@ The **CD pipeline** automates the deployment of the application whenever there i
 
 ---
 
-## My Experience with Pulumi 🔨
-
-This project gave me the chance to try **Pulumi** for the first time — and I honestly didn’t expect to pick it up this quickly.
-
-I spent **just a weekend (Saturday + Sunday)** learning the tool, experimenting with it, and deploying real infrastructure. Here’s how it went:
-
-- I already have experience with **AWS CloudFormation** and **AWS CDK (TypeScript)**, so the learning curve wasn’t too steep.
-- The **Pulumi documentation** was excellent — clear examples and structure made it super easy to follow.
-- Since I’m used to writing infra in TypeScript, Pulumi felt intuitive and productive right out of the gate.
-- I was able to set up two different hosting strategies:
-  - One using **S3 static website hosting**
-  - Another with **S3 + CloudFront + OAC** for a more production-ready setup
-- Connected both deployments to **GitHub Actions** for full CI/CD automation.
-
-Overall, I was impressed by how easy it was to get everything wired up. Definitely a tool I’ll keep in my toolbox going forward.
-
----
-
 Feel free to check out the repo and contribute! 🌟
