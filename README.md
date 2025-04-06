@@ -30,7 +30,7 @@ The app is hosted on **Amazon S3** using its static website hosting feature. Thi
 The S3 bucket provides a simple, cost-effective solution for hosting the frontend, ensuring fast content delivery globally.
 
 ### Preview for Infrastructure-1 🌐:
-[Infrastructure-1 Preview](http://dev-mood-1-bucket-81bfedd.s3-website-us-east-1.amazonaws.com/)
+[Infrastructure-1 Preview](http://dev-mood-1-bucket-81bfedd.s3-website-us-east-1.amazonaws.com/){:target="_blank"}
 
 ### Diagram for Infrastructure-1:
 ![Infrastructure-1 Diagram](assets/infrastructure_1_diagram.png)
@@ -51,7 +51,7 @@ The app is also hosted using **Amazon S3**, but this time with an added **CloudF
 This setup is more secure and optimized for performance, ensuring your app loads quickly regardless of where your users are located.
 
 ### Preview for Infrastructure-2 ⚡:
-[Infrastructure-2 Preview](https://d2y1cy8163fewy.cloudfront.net)
+[Infrastructure-2 Preview](https://d2y1cy8163fewy.cloudfront.net){:target="_blank"}
 
 ### Diagram for Infrastructure-2:
 ![Infrastructure-2 Diagram](assets/infrastructure_2_diagram.png)
@@ -83,18 +83,18 @@ The **CI pipeline** ensures that code is continuously linted and checked for qua
 
 ## Continuous Deployment (CD) 🚀
 
-The **CD pipeline** automates the deployment of the application whenever there is a push to the main branch. It deploys **Infrastructure-1** (Static Website Hosting with S3) and **Infrastructure-2** (Static Website Hosting with S3, CloudFront, and OAC). Here’s how the process works:
+The **CD pipeline** automates the deployment of the application whenever there is a push to the main branch. It deploys **Infrastructure-1** (Static Website Hosting with S3) and **Infrastructure-2** (Static Website Hosting with S3, CloudFront, and OAC). Here's how the process works:
 
 ### Steps:
 1. **Code Checkout**: Pulls the latest code from the repository.
 2. **Static Website Build**: Builds the static website assets from the frontend.
 3. **AWS Credentials Configuration**: Configures AWS access keys for secure deployment.
-4. **Deploy Infrastructure-1**: The website files are uploaded to the S3 bucket for the first infrastructure setup.
-5. **Deploy Infrastructure-2**: The website files are uploaded to the S3 bucket for the second infrastructure setup, with CloudFront and OAC.
+4. **Deploy Infrastructure-1 via Pulumi**: Deploys **Infrastructure-1** by uploading the static website files to the S3 bucket.
+5. **Deploy Infrastructure-2 via Pulumi**: Deploys **Infrastructure-2** by uploading the static website files to the S3 bucket, while ensuring CloudFront and OAC are properly configured for enhanced security and performance.
 
 ### Technologies Used:
 - **GitHub Actions**: Automates the deployment process.
-- **Pulumi**: Infrastructure as Code (IaC) tool used to manage the cloud resources.
+- **Pulumi**: Infrastructure as Code (IaC) tool used to manage and deploy the cloud resources.
 - **AWS S3** and **CloudFront**: For hosting and serving the static content globally.
 
 ### Benefits:
