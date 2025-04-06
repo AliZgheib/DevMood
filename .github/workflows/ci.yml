@@ -1,7 +1,9 @@
 name: CI with Pulumi
 
 on:
-  - pull_request
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lint-frontend:

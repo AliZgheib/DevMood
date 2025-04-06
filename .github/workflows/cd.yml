@@ -3,7 +3,7 @@ name: CD with Pulumi
 on:
   push:
     branches:
-      - main  # or your main branch name
+      - main
 
 jobs:
   deploy:
