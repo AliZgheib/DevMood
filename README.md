@@ -1,12 +1,12 @@
 # Dev Mood App 🌟
 
-**Dev Mood** is a web application designed to enhance a developer's coding experience. It offers a combination of dev quotes, coding music, weather information, and a beautiful, responsive UI to keep developers motivated and focused. The app leverages modern cloud infrastructure and CI/CD practices to ensure seamless deployment and scalability. 🚀
+**Dev Mood** is a web application designed to enhance a developer's coding experience. It offers a combination of dev jokes, coding music, weather information, and a beautiful, responsive UI to keep developers motivated and focused. The app leverages modern cloud infrastructure and CI/CD practices to ensure seamless deployment and scalability. 🚀
 
 ## Frontend 🖥️
 
 The frontend of the Dev Mood app is built using **Next.js** and **Tailwind CSS** to create a dynamic and highly responsive user experience. The key features of the app include:
 
-- **Dev Quotes** 💬: A curated collection of inspiring developer quotes to motivate you during your coding sessions.
+- **Dev Jokes** 😂: A curated collection of funny developer jokes to lighten the mood during coding sessions.
 - **Coding Music 🎶**: A selection of background music designed to help you stay focused and productive while coding.
 - **Weather Info 🌤️**: Real-time weather updates based on your location to help plan your day.
 - **Responsive Design 📱**: A modern and user-friendly design that adapts to various screen sizes and devices.
