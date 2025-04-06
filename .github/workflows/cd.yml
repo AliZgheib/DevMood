@@ -27,13 +27,15 @@ jobs:
           npm install
           npm run build
 
+      # Copy static website assets
+      - name: Copy static website assets
+        run: cp -r frontend/out infrastructure-1
+
       # Install dependencies
       - name: Install dependencies
-        run: cd frontend && npm install
-
-      # Prepare static assets
-      - name: Prepare static assets
-        run: cp -r frontend/out infrastructure-1
+        run: | 
+          cd infrastructure-1
+          npm install
 
       # Configure AWS Credentials 
       - name: Configure AWS Credentials
@@ -74,13 +76,15 @@ jobs:
           npm install
           npm run build
 
+      # Copy static website assets
+      - name: Copy static website assets
+        run: cp -r frontend/out infrastructure-2
+
       # Install dependencies
       - name: Install dependencies
-        run: cd frontend && npm install
-
-      # Prepare static assets
-      - name: Prepare static assets
-        run: cp -r frontend/out infrastructure-2
+        run: | 
+          cd infrastructure-2
+          npm install
 
       # Configure AWS Credentials 
       - name: Configure AWS Credentials
