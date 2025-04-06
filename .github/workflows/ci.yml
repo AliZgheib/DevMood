@@ -58,7 +58,7 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-  lint-infrastructure-1:
+  lint-infrastructure-2:
     runs-on: ubuntu-latest
 
     steps:
