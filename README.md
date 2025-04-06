@@ -63,7 +63,7 @@ This setup is more secure and optimized for performance, ensuring your app loads
 
 ## Continuous Integration (CI) 🔄
 
-The **CI pipeline** ensures that code is continuously linted and checked for quality with each pull request. It lints the frontend, **Infrastructure-1**, and **Infrastructure-2** code to ensure consistency and catch errors early in the process. Here's how it works:
+The **CI pipeline** ensures that code is continuously linted and checked for quality with each pull request. It lints the **frontend**, **Infrastructure-1**, and **Infrastructure-2** code to ensure consistency and catch errors early in the process. Here's how it works:
 
 ### Steps:
 1. **Code Checkout**: Pulls the latest code from the repository.
