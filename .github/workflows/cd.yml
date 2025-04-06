@@ -33,7 +33,7 @@ jobs:
 
       # Prepare static assets
       - name: Prepare static assets
-        run: cp frontend/out infrastructure-1
+        run: cp -r frontend/out infrastructure-1
 
       # Configure AWS Credentials 
       - name: Configure AWS Credentials
@@ -79,7 +79,7 @@ jobs:
 
       # Prepare static assets
       - name: Prepare static assets
-        run: cp frontend/out infrastructure-2
+        run: cp -r frontend/out infrastructure-2
 
       # Configure AWS Credentials 
       - name: Configure AWS Credentials
