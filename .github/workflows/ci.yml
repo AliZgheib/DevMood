@@ -1,10 +1,12 @@
 name: CI with Pulumi
 
 on:
-  - pull_request
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  preview:
+  lint-frontend:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,31 +20,54 @@ jobs:
         with:
           node-version: "18"
 
-      # Generate static website assets
-      - name: Generate static website assets
-        run: | 
-          cd frontend
-          npm install
-          npm run build
-          cp -r out ../out 
+      # Install dependencies
+      - name: Install dependencies
+        run: cd frontend && npm install
 
-      # Configure AWS Credentials 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      # Run lint
+      - name: Run lint
+        run: cd frontend && npm run lint
+
+  lint-infrastructure-1:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up the latest Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          node-version: "18"
 
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: cd infrastructure-1 && npm install
 
-      # Deploy infra with Pulumi
-      - name: Deploy infra with Pulumi
-        uses: pulumi/actions@v6
+      # Run lint
+      - name: Run lint
+        run: cd infrastructure-1 && npm run lint
+
+  lint-infrastructure-2:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up the latest Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          command: preview
-          stack-name: dev-mood-1
-        env:
-          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+          node-version: "18"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: cd infrastructure-2 && npm install
+
+      # Run lint
+      - name: Run lint
+        run: cd infrastructure-2 && npm run lint

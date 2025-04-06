@@ -1,5 +1,8 @@
 {
   "name": "dev-mood-2",
+  "scripts": {
+    "lint": "tsc --noEmit"
+  },
   "devDependencies": {
     "@types/node": "^18",
     "typescript": "^5.0.0"
