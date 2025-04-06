@@ -13,8 +13,6 @@ jobs:
       # Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       # Set up the latest Node.js version
       - name: Set up Node.js
@@ -22,17 +20,13 @@ jobs:
         with:
           node-version: "18"
 
-      # CD into the directory
-      - name: CD into the directory
-        run: cd frontend
-
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: cd frontend && npm install
 
       # Run lint
       - name: Run lint
-        run: npm run lint
+        run: cd frontend && npm run lint
 
   lint-infrastructure-1:
     runs-on: ubuntu-latest
@@ -41,8 +35,6 @@ jobs:
       # Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       # Set up the latest Node.js version
       - name: Set up Node.js
@@ -50,17 +42,13 @@ jobs:
         with:
           node-version: "18"
 
-      # CD into the directory
-      - name: CD into the directory
-        run: cd infrastructure-1
-
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: cd infrastructure-1 && npm install
 
       # Run lint
       - name: Run lint
-        run: npm run lint
+        run: cd infrastructure-1 && npm run lint
 
   lint-infrastructure-2:
     runs-on: ubuntu-latest
@@ -69,8 +57,6 @@ jobs:
       # Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       # Set up the latest Node.js version
       - name: Set up Node.js
@@ -78,14 +64,10 @@ jobs:
         with:
           node-version: "18"
 
-      # CD into the directory
-      - name: CD into the directory
-        run: cd infrastructure-2
-
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: cd infrastructure-2 && npm install
 
       # Run lint
       - name: Run lint
-        run: npm run lint
+        run: cd infrastructure-2 && npm run lint
