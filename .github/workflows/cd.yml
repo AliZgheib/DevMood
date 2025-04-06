@@ -49,6 +49,7 @@ jobs:
         with:
           command: up
           stack-name: dev-mood-1
+          work-dir: infrastructure-1
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
@@ -95,5 +96,6 @@ jobs:
         with:
           command: up
           stack-name: dev-mood-2
+          work-dir: infrastructure-2
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
