@@ -30,7 +30,7 @@ The app is hosted on **Amazon S3** using its static website hosting feature. Thi
 The S3 bucket provides a simple, cost-effective solution for hosting the frontend, ensuring fast content delivery globally.
 
 ### Preview for Infrastructure-1 🌐:
-[Infrastructure-1 Preview](http://dev-mood-1-bucket-81bfedd.s3-website-us-east-1.amazonaws.com/){:target="_blank"}
+<a href="http://dev-mood-1-bucket-81bfedd.s3-website-us-east-1.amazonaws.com/" target="_blank">Infrastructure-1 Preview</a>
 
 ### Diagram for Infrastructure-1:
 ![Infrastructure-1 Diagram](assets/infrastructure_1_diagram.png)
@@ -51,7 +51,7 @@ The app is also hosted using **Amazon S3**, but this time with an added **CloudF
 This setup is more secure and optimized for performance, ensuring your app loads quickly regardless of where your users are located.
 
 ### Preview for Infrastructure-2 ⚡:
-[Infrastructure-2 Preview](https://d2y1cy8163fewy.cloudfront.net){:target="_blank"}
+<a href="https://d2y1cy8163fewy.cloudfront.net" target="_blank">Infrastructure-2 Preview</a>
 
 ### Diagram for Infrastructure-2:
 ![Infrastructure-2 Diagram](assets/infrastructure_2_diagram.png)
