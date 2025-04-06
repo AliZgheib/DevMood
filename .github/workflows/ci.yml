@@ -1,12 +1,10 @@
-name: Deploy Next.js with Pulumi
+name: CI with Pulumi
 
 on:
-  push:
-    branches:
-      - main  # or your main branch name
+  - pull_request
 
 jobs:
-  deploy:
+  preview:
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +42,7 @@ jobs:
       - name: Deploy infra with Pulumi
         uses: pulumi/actions@v6
         with:
-          command: up
-          stack-name: dev-mood-stack
+          command: preview
+          stack-name: dev-mood
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
